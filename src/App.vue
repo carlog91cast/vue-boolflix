@@ -10,11 +10,18 @@ import FlixHeader from './components/FlixHeader.vue';
 import FlixMain from './components/FlixMain.vue';
 import axios from 'axios';
 
+
 export default {
   name: 'App',
+  data() {
+    return{
+      movies:[],
+      
+    }
+  },
   components: {
     FlixHeader,
-    FlixMain
+    FlixMain,
   }
 }
 </script>
