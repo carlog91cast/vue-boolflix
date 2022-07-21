@@ -9,6 +9,7 @@
 import FlixHeader from './components/FlixHeader.vue';
 import FlixMain from './components/FlixMain.vue';
 import axios from 'axios';
+import { setFlagsFromString } from 'v8';
 
 
 
@@ -25,8 +26,8 @@ export default {
     }
   },
   methods: {
-    movieSearch() {
-      axios.get('https://api.themoviedb.org/3/search/movie?query=a&api_key=d0770c7faacf104886a30c991df47d08')
+    movieSearch(searchInput) {
+      axios.get(`https://api.themoviedb.org/3/search/movie?query=a&api_key=d0770c7faacf104886a30c991df47d08&query=${searchInput}`)
         .then((result) => {
           console.log(result.data.results)
           this.movies = result.data.results;
@@ -35,7 +36,7 @@ export default {
         .catch((error) => {
           console.warn(error);
         })
-    }
+    },
   },
   created(){
     this.movieSearch()

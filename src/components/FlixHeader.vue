@@ -2,9 +2,8 @@
     <nav>
         <input type="text"
                 placeholder="search movies,series"
-                v-model="searchInput"
-                @keydown.enter="$emit('search', searchInput)">
-        <button @click="$emit('search',searchInput)">Search</button>
+                v-model="searchInput">
+        <button class="btn btn-primary m-1" @click="$emit('search',searchInput)">Search</button>
     </nav>
 </template>
 

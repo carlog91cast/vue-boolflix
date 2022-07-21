@@ -1,12 +1,10 @@
 <template>
     <div class="container">
-        <ul class="row">
-            <li>
-                <h1>{{ film.title }}</h1>
-                <h2>{{ film.original_title }}</h2>
-                <h3>{{ film.original_language }}</h3>
-                <h3>{{ film.vote_average }}</h3>
-            </li>
+        <ul class="row list-group">
+            <li class=" col-4 list-group-item">{{ film.title }}</li>
+            <li class=" col-4 list-group-item">{{ film.original_title }}</li>
+            <li class=" col-4 list-group-item">{{ setFlagLang(film) }}</li>
+            <li class=" col-4 list-group-item">{{ film.vote_average }}</li>
         </ul>
     </div>
 </template>
@@ -15,7 +13,17 @@
 export default {
     props: ['film'],
 
+    methods: {
+        setFlagLang(movie) {
+            const img = `../assets/img/it.png`;
+            if (movie.original_language == "it") {
+                "it" === img;
+            }
+        }
+    }
+
 }
+
 </script>
 
 <style lang="scss">
