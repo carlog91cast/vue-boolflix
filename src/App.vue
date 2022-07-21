@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FlixHeader @search="movieSearch" />
-    <FlixMain />
+    <FlixMain v-for="(movie, index) in movies" :key="index" />
   </div>
 </template>
 
@@ -14,23 +14,36 @@ import axios from 'axios';
 
 export default {
   name: 'App',
-  data() {
-    return{
-      movies:[],
-      
-    }
-  },
-  methods:{
-    movieSearch(){
-      
-    }
-  },
   components: {
     FlixHeader,
     FlixMain,
-  }
-}
-</script>
+  },
+  data() {
+    return {
+      movies: [],
 
-<style>
+    }
+  },
+  methods: {
+    movieSearch() {
+      axios.get('https://api.themoviedb.org/3/search/movie?query=a&api_key=d0770c7faacf104886a30c991df47d08')
+        .then((result) => {
+          console.log(result.data.results)
+          this.movies = result.data.results;
+  
+        })
+        .catch((error) => {
+          console.warn(error);
+        })
+    }
+  },
+  created(){
+    this.movieSearch()
+  },
+  
+}
+</script >
+  
+<style lang="scss">
+  @import "~bootstrap/scss/bootstrap";
 </style>
