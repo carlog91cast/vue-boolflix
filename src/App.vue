@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FlixHeader />
+    <FlixHeader @search="movieSearch" />
     <FlixMain />
   </div>
 </template>
@@ -11,11 +11,17 @@ import FlixMain from './components/FlixMain.vue';
 import axios from 'axios';
 
 
+
 export default {
   name: 'App',
   data() {
     return{
       movies:[],
+      
+    }
+  },
+  methods:{
+    movieSearch(){
       
     }
   },
