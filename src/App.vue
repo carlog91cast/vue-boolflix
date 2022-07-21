@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FlixHeader @search="movieSearch" />
-    <FlixMain v-for="(movie, index) in movies" :key="index" />
+    <FlixMain v-for="(movie, index) in movies" :key="index" :film = movie />
   </div>
 </template>
 
