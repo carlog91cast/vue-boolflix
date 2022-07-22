@@ -1,9 +1,11 @@
 <template>
     <main>
-        <ul class="list-group row">
-            <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-group-item" />
-            <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-group-item" />
-        </ul>
+        <div class="container">
+            <ul class="list-group">
+                <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-group-item" />
+                <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-group-item" />
+            </ul>
+        </div>
     </main>
 </template>
 
@@ -12,7 +14,7 @@ import MovieCard from './MovieCard.vue';
 import TvCard from './TvCard.vue';
 export default {
     props: ["movies",
-            "series"],
+        "series"],
     methods: {
 
     },

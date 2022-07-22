@@ -1,8 +1,9 @@
 <template>
 
     <li class="col-3 list-group-item">
-        <div class="poster-film"></div>
-        <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" alt="">
+        <div class="poster-film">
+            <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" alt="">
+        </div>
         <div class="title">
             <h3> {{ info.title }}</h3>
         </div>
