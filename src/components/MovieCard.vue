@@ -9,7 +9,7 @@
             </div>
             <div class="lang">
                 <img v-if="langArray.includes(item.original_language)" 
-                :src="require(`..assets/img/${item.original_language}.png`)" 
+                :src="require(`.assets/img/${item.original_language}.png`)" 
                 alt="item.original_language" />
                 <div v-else>{{info.original_language}}</div>
             </div>
