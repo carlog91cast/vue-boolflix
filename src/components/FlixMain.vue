@@ -1,6 +1,6 @@
 <template>
     <main>
-        <ul class="list-group">
+        <ul class="list-group row">
             <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-group-item" />
             <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-group-item" />
         </ul>

@@ -1,23 +1,24 @@
 <template>
-    <div class="row">
-        <li class="list-group-item">
-            <div class="title">
-                <h3> {{ info.title }}</h3>
-            </div>
-            <div class="origin-title">
-                <h4>{{ info.original_title }}</h4>
-            </div>
-            <div class="lang mt-1 mb-1">
-                <img v-if="langArray.includes(info.original_language)" 
-                :src="require(`../assets/img/${info.original_language}.png`)" 
-                alt="info.original_language" />
-                <div v-else>{{info.original_language}}</div>
-            </div>
-            <div class="vote">
-                <h5>{{ info.vote_average }}</h5>
-            </div>
-        </li>
-    </div>
+
+    <li class="col-3 list-group-item">
+        <div class="poster-film"></div>
+        <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" alt="">
+        <div class="title">
+            <h3> {{ info.title }}</h3>
+        </div>
+        <div class="origin-title">
+            <h4>{{ info.original_title }}</h4>
+        </div>
+        <div class="lang mt-1 mb-1">
+            <img v-if="langArray.includes(info.original_language)"
+                :src="require(`../assets/img/${info.original_language}.png`)" alt="info.original_language" />
+            <div v-else>{{ info.original_language }}</div>
+        </div>
+        <div class="vote">
+            <h5>{{ info.vote_average }}</h5>
+        </div>
+    </li>
+
 </template>
 
 <script>
@@ -45,7 +46,8 @@ export default {
 main {
     width: 60%;
     margin: 0 auto;
-    .lang img{
+
+    .lang img {
         width: 5%;
     }
 }
