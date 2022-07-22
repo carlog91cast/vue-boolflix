@@ -8,9 +8,9 @@
                 <h4>{{ info.original_title }}</h4>
             </div>
             <div class="lang">
-                <img v-if="langArray.includes(item.original_language)" 
-                :src="require(`.assets/img/${item.original_language}.png`)" 
-                alt="item.original_language" />
+                <img v-if="langArray.includes(info.original_language)" 
+                :src="require(`.assets/img/${info.original_language}.png`)" 
+                alt="info.original_language" />
                 <div v-else>{{info.original_language}}</div>
             </div>
             <div class="vote">
