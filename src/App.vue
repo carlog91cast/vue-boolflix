@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FlixHeader @search="movieSearch" />
-    <FlixMain v-for="(movie, index) in movies" :key="index" :film = movie />
+    <FlixMain :movies = movies />
   </div>
 </template>
 
@@ -9,7 +9,6 @@
 import FlixHeader from './components/FlixHeader.vue';
 import FlixMain from './components/FlixMain.vue';
 import axios from 'axios';
-import { setFlagsFromString } from 'v8';
 
 
 

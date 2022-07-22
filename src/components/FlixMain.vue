@@ -1,25 +1,20 @@
 <template>
-    <div class="container">
-        <ul class="row list-group">
-            <li class=" col-4 list-group-item">{{ film.title }}</li>
-            <li class=" col-4 list-group-item">{{ film.original_title }}</li>
-            <li class=" col-4 list-group-item">{{ setFlagLang(film) }}</li>
-            <li class=" col-4 list-group-item">{{ film.vote_average }}</li>
+    <main>
+        <ul class="list-group">
+            <li v-for="movie in movies" :key="movie.id" class="list-group-item">
+                {{ movie.title }} - {{ movie.original_title }} - {{ movie.original_language }} - {{ movie.vote_average }}
+            </li>
         </ul>
-    </div>
+    </main>
 </template>
 
 <script>
 export default {
-    props: ['film'],
+    props: ['movies'],
 
     methods: {
-        setFlagLang(movie) {
-            const img = `../assets/img/it.png`;
-            if (movie.original_language == "it") {
-                "it" === img;
-            }
-        }
+
+
     }
 
 }
@@ -28,4 +23,9 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap";
+
+main {
+    width: 60%;
+    margin: 0 auto;
+}
 </style>
