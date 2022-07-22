@@ -2,10 +2,10 @@
     <div class="row">
         <li class="list-group-item">
             <div class="title">
-                <h3> {{ info.title }}</h3>
+                <h3> {{ item.title }}</h3>
             </div>
             <div class="origin-title">
-                <h4>{{ info.original_title }}</h4>
+                <h4>{{ item.original_title }}</h4>
             </div>
             <!-- <div class="lang">
                 <img v-if="langArray.includes(info.original_language)" 
@@ -14,7 +14,7 @@
                 <div v-else>{{info.original_language}}</div>
             </div> -->
             <div class="vote">
-                <h5>{{ info.vote_average }}</h5>
+                <h5>{{ item.vote_average }}</h5>
             </div>
         </li>
     </div>
@@ -22,13 +22,13 @@
 
 <script>
 export default {
-    name: 'MovieCard',
+    name: 'TvCard',
     data: function () {
         return {
-            langArray: ["it", "en", "ja", "es", "de", "pt"]
+            
         }
     },
-    props: ['info'],
+    props: ['item'],
 
     methods: {
 

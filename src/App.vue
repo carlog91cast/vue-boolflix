@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FlixHeader @search="movieSearch" />
-    <FlixMain :movies = movies />
+    <FlixMain :movies = "movies" :series = "series" />
   </div>
 </template>
 
@@ -20,16 +20,31 @@ export default {
   },
   data() {
     return {
+      apiKey: 'd0770c7faacf104886a30c991df47d08',
+      apiMovieUrl: 'https://api.themoviedb.org/3/search/movie',
+      apiTvUrl: 'https://api.themoviedb.org/3/search/tv',
       movies: [],
+      series: [],
 
     }
   },
   methods: {
     movieSearch(searchInput) {
-      axios.get(`https://api.themoviedb.org/3/search/movie?query=a&api_key=d0770c7faacf104886a30c991df47d08&query=${searchInput}`)
+      axios.get(`${this.apiMovieUrl}?api_key=${this.apiKey}&query=${searchInput}`)
         .then((result) => {
           console.log(result.data.results)
           this.movies = result.data.results;
+  
+        })
+        .catch((error) => {
+          console.warn(error);
+        })
+    },
+    tvSearch(searchCommand) {
+      axios.get(`${this.apiTvUrl}?api_key=${this.apiKey}&query=${searchCommand}`)
+        .then((result) => {
+          console.log(result.data.results)
+          this.series = result.data.results;
   
         })
         .catch((error) => {

@@ -2,18 +2,24 @@
     <main>
         <ul class="list-group">
             <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-group-item" />
+            <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-group-item" />
         </ul>
     </main>
 </template>
 
 <script>
 import MovieCard from './MovieCard.vue';
+import TvCard from './TvCard.vue';
 export default {
-    props: ["movies"],
+    props: ["movies",
+        "series"],
     methods: {
 
     },
-    components: { MovieCard }
+    components: {
+        MovieCard,
+        TvCard,
+    }
 }
 
 </script>
