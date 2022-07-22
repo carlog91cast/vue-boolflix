@@ -12,7 +12,7 @@ import MovieCard from './MovieCard.vue';
 import TvCard from './TvCard.vue';
 export default {
     props: ["movies",
-        "series"],
+            "series"],
     methods: {
 
     },

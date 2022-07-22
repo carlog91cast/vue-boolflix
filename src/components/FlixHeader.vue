@@ -3,7 +3,7 @@
         <nav class="d-flex justify-content-around m-3">
             <img src="" alt="">
             <input type="text" placeholder="search movies,series" v-model="searchInput">
-            <button class="btn btn-primary m-1" @click="$emit('search', searchInput, searchCommand)">Search</button>
+            <button class="btn btn-primary m-1" @click="$emit('search', searchInput)">Search</button>
         </nav>
     </header>
 
@@ -15,7 +15,6 @@ export default {
     data() {
         return {
             searchInput: '',
-            searchCommand: '',
         }
     }
 }

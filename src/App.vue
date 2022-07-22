@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FlixHeader @search="movieSearch" />
+    <FlixHeader @search="tvMoviesFunction" />
     <FlixMain :movies = "movies" :series = "series" />
   </div>
 </template>
@@ -40,8 +40,8 @@ export default {
           console.warn(error);
         })
     },
-    tvSearch(searchCommand) {
-      axios.get(`${this.apiTvUrl}?api_key=${this.apiKey}&query=${searchCommand}`)
+    tvSearch(searchInput) {
+      axios.get(`${this.apiTvUrl}?api_key=${this.apiKey}&query=${searchInput}`)
         .then((result) => {
           console.log(result.data.results)
           this.series = result.data.results;
@@ -51,9 +51,14 @@ export default {
           console.warn(error);
         })
     },
+    tvMoviesFunction(searchInput){
+      this.tvSearch(searchInput),
+      this.movieSearch(searchInput)
+    }
   },
   created(){
     this.movieSearch()
+    this.tvSearch()
   },
   
 }
