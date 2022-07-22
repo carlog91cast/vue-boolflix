@@ -7,12 +7,12 @@
             <div class="origin-title">
                 <h4>{{ info.original_title }}</h4>
             </div>
-            <!-- <div class="lang">
+            <div class="lang mt-1 mb-1">
                 <img v-if="langArray.includes(info.original_language)" 
-                :src="`..assets/img/${info.original_language}.png'`" 
+                :src="require(`../assets/img/${info.original_language}.png`)" 
                 alt="info.original_language" />
                 <div v-else>{{info.original_language}}</div>
-            </div> -->
+            </div>
             <div class="vote">
                 <h5>{{ info.vote_average }}</h5>
             </div>
@@ -45,5 +45,8 @@ export default {
 main {
     width: 60%;
     margin: 0 auto;
+    .lang img{
+        width: 5%;
+    }
 }
 </style>

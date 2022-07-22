@@ -55,11 +55,7 @@ export default {
       this.tvSearch(searchInput),
       this.movieSearch(searchInput)
     }
-  },
-  created(){
-    this.movieSearch()
-    this.tvSearch()
-  },
+  }
   
 }
 </script >
