@@ -2,11 +2,20 @@
     <div class="row">
         <li class="list-group-item">
             <div class="title">
-                <h4> {{ info.title }}</h4>
+                <h3> {{ info.title }}</h3>
             </div>
-            <div class="origin-title">{{ info.original_title }}</div>
-            <div class="lang">{{ info.original_language }}</div>
-            <div class="vote">{{ info.vote_average }}</div>
+            <div class="origin-title">
+                <h4>{{ info.original_title }}</h4>
+            </div>
+            <div class="lang">
+                <img v-if="langArray.includes(item.original_language)" 
+                :src="require(`..assets/img/${item.original_language}.png`)" 
+                alt="item.original_language" />
+                <div v-else>{{info.original_language}}</div>
+            </div>
+            <div class="vote">
+                <h5>{{ info.vote_average }}</h5>
+            </div>
         </li>
     </div>
 </template>
@@ -14,9 +23,9 @@
 <script>
 export default {
     name: 'MovieCard',
-    data: function(){
-        return{
-            langArray : ["it", "en", "ja", "es", "de", "pt"]
+    data: function () {
+        return {
+            langArray: ["it", "en", "ja", "es", "de", "pt"]
         }
     },
     props: ['info'],
