@@ -1,6 +1,5 @@
 <template>
-
-    <li class="col-3 list-group-item">
+    <li class="list-group-item">
         <div class="poster-film">
             <img :src="`https://image.tmdb.org/t/p/w154/${info.poster_path}`" alt="">
         </div>
@@ -15,11 +14,10 @@
                 :src="require(`../assets/img/${info.original_language}.png`)" alt="info.original_language" />
             <div v-else>{{ info.original_language }}</div>
         </div>
-        <div class="vote">
-            <h5>{{ info.vote_average }}</h5>
+        <div class="vote mt-2">
+            <h5><i class="fa-solid fa-star"></i></h5>
         </div>
     </li>
-
 </template>
 
 <script>
