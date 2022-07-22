@@ -1,22 +1,19 @@
 <template>
     <main>
         <ul class="list-group">
-            <li v-for="movie in movies" :key="movie.id" class="list-group-item">
-                {{ movie.title }} - {{ movie.original_title }} - {{ movie.original_language }} - {{ movie.vote_average }}
-            </li>
+            <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-group-item" />
         </ul>
     </main>
 </template>
 
 <script>
+import MovieCard from './MovieCard.vue';
 export default {
-    props: ['movies'],
-
+    props: ["movies"],
     methods: {
 
-
-    }
-
+    },
+    components: { MovieCard }
 }
 
 </script>
@@ -26,6 +23,7 @@ export default {
 
 main {
     width: 60%;
+    height: 100%;
     margin: 0 auto;
 }
 </style>
