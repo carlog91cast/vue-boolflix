@@ -1,12 +1,15 @@
 <template>
-    <header class="container">
-        <nav class="d-flex justify-content-around m-3">
-            <img src="" alt="">
-            <input type="text" placeholder="search movies,series" v-model="searchInput">
-            <button class="btn btn-primary m-1" @click="$emit('search', searchInput)">Search</button>
+    <header class="bg-dark">
+        <nav class="navbar m-3">
+            <div class="text-danger fw-5">
+                <h1>BOOLFLIX</h1>
+            </div>
+            <div class="d-flex mb-2">
+                <input class="form-control me-2" type="text" placeholder="search movies,series" v-model="searchInput">
+                <button class="btn btn-danger" @click="$emit('search', searchInput)">Search</button>
+            </div>
         </nav>
     </header>
-
 </template>
 
 <script>
@@ -22,4 +25,5 @@ export default {
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap";
+
 </style>

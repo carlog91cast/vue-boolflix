@@ -9,6 +9,9 @@
         <div class="origin-title">
             <h4>{{ item.original_name }}</h4>
         </div>
+        <div class="overview">
+            <h5></h5>
+        </div>
         <div class="lang">
             <img v-if="langArray.includes(item.original_language)" :src="`../assets/img/${item.original_language}.png'`"
                 alt="info.original_language" />

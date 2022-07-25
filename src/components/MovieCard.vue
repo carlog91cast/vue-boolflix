@@ -15,7 +15,7 @@
             <div v-else>{{ info.original_language }}</div>
         </div>
         <div class="vote mt-2">
-            <h5><i class="fa-solid fa-star"></i></h5>
+            <h5><i v-for="index in setNumStar(info.vote_average)" :key="index" class="fa-solid fa-star"></i></h5>
         </div>
     </li>
 </template>
@@ -31,11 +31,13 @@ export default {
     props: ['info'],
 
     methods: {
+        setNumStar(number) {
+            return Math.round(number / 2)
 
+        },
 
     }
-
-}
+ }
 
 </script>
 
