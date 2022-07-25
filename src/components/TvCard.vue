@@ -1,11 +1,11 @@
 <template>
-    <li class="list-group-item bg-dark mt-3">
+    <li class="bg-dark mt-3 p-2 m-2">
         <div class="poster-film">
-            <img :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="">
+            <img class="w-100" :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="">
         </div>
         <div class="series-text">
             <div class="title">
-                <h3>Titolo:{{ item.name }}</h3>
+                <h4>Titolo:{{ item.name }}</h4>
             </div>
             <div class="origin-title">
                 <h4>Titolo originale:{{ item.original_name }}</h4>
@@ -17,10 +17,10 @@
             </div>
             <div class="vote d-flex mt-2">
                 <span>Voto:</span>
-                <h5><i v-for="index in setNumStar(item.vote_average)" :key="index" class="fa-solid fa-star"></i></h5>
+                <i v-for="index in setNumStar(item.vote_average)" :key="index" class="fa-solid fa-star"></i>
             </div>
             <div class="overview">
-                <h5>Overview:{{ item.overview }}</h5>
+                <h6>Overview:{{ item.overview }}</h6>
             </div>
         </div>
     </li>
@@ -53,14 +53,24 @@ export default {
 @import "~bootstrap/scss/bootstrap";
 
 li {
+    width: calc(100% / 6);
+    list-style: none;
+
     .series-text {
         color: white;
+        display: none;
+
         .lang img {
             width: 20px;
         }
-        .vote i{
+
+        .vote i {
             color: yellow;
         }
+    }
+
+    .series-text:hover {
+        display: block;
     }
 }
 </style>
