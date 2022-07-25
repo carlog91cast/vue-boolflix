@@ -1,9 +1,9 @@
 <template>
-    <li class="bg-dark mt-3 p-2 m-2">
-        <div @mouseover="upHere = true" @mouseleave="upHere = false" class="poster-film">
-            <img v-show="upHere" class="w-100" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
+    <li @mouseover="upHere = false" @mouseleave="upHere = true" class="bg-dark mt-3 p-2 m-2">
+        <div v-show="upHere" class="poster-film">
+            <img class="w-100" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
         </div>
-        <div class="movie-text fs-5 mt-3">
+        <div v-show="!upHere" class="movie-text fs-5 mt-3">
             <div class="title">
                 <h4>Titolo:{{ info.title }}</h4>
             </div>
@@ -32,7 +32,7 @@ export default {
     data: function () {
         return {
             langArray: ["it", "en", "ja", "es", "de", "pt"],
-            upHere : false
+            upHere : true
         }
         
     },
