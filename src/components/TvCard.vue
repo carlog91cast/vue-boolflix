@@ -3,7 +3,7 @@
         <div class="poster-film">
             <img :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="">
         </div>
-        <div class="series-text d-none">
+        <div class="series-text">
             <div class="title">
                 <h3>Titolo:{{ item.name }}</h3>
             </div>
@@ -52,9 +52,15 @@ export default {
 <style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 
-main {
-    width: 60%;
-    margin: 0 auto;
-    background-color: #434343;
+li {
+    .series-text {
+        color: white;
+        .lang img {
+            width: 20px;
+        }
+        .vote i{
+            color: yellow;
+        }
+    }
 }
 </style>

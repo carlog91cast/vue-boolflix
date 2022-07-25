@@ -54,7 +54,7 @@ li {
     .movie-text {
         color: white;
         .lang img {
-            width: 3%;
+            width: 30px;
         }
         .vote i{
             color: yellow;

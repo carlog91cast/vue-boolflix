@@ -4,13 +4,13 @@
             <div class="movies-card">
                 <h2>Films</h2>
                 <ul class="list-group d-flex flex-wrap">
-                    <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-film" />
+                    <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="d-flex" />
                 </ul>
             </div>
             <div class="series-card">
                 <h2>TV serie</h2>
                 <ul class="list-group d-flex flex-wrap">
-                    <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-film" />
+                    <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="d-flex" />
                 </ul>
             </div>
         </div>
