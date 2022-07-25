@@ -1,9 +1,9 @@
 <template>
-    <li class="bg-dark mt-3 p-2 m-2">
-        <div class="poster-film">
+    <li @mouseover="upHere = false" @mouseleave="upHere = true" class="bg-dark mt-3 p-2 m-2">
+        <div v-show="upHere" class="poster-film">
             <img class="w-100" :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="">
         </div>
-        <div class="series-text">
+        <div v-show="!upHere" class="series-text">
             <div class="title">
                 <h4>Titolo:{{ item.name }}</h4>
             </div>
@@ -31,7 +31,8 @@ export default {
     name: 'TvCard',
     data: function () {
         return {
-            langArray: ["it", "en", "ja", "es", "de", "pt"]
+            langArray: ["it", "en", "ja", "es", "de", "pt"],
+            upHere: true
         }
     },
     props: ['item'],
