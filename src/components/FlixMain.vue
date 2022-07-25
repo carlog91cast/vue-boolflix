@@ -3,14 +3,14 @@
         <div class="container">
             <div class="movies-card">
                 <h2>Films</h2>
-                <ul class="list-group">
-                    <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-group-item" />
+                <ul class="list-group d-flex flex-wrap">
+                    <MovieCard v-for="movie in movies" :key="movie.id" :info="movie" class="list-film" />
                 </ul>
             </div>
             <div class="series-card">
                 <h2>TV serie</h2>
-                <ul class="list-group">
-                    <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-group-item" />
+                <ul class="list-group d-flex flex-wrap">
+                    <TvCard v-for="serie in series" :key="serie.id" :item="serie" class="list-film" />
                 </ul>
             </div>
         </div>
@@ -49,22 +49,12 @@ main {
         font-weight: 300;
         color: red;
     }
-
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-    }
 }
 
 .series-card {
     h2 {
         font-weight: 300;
         color: red;
-    }
-
-    ul {
-        display: flex;
-        flex-wrap: wrap;
     }
 }
 </style>

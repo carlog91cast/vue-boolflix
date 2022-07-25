@@ -51,17 +51,14 @@ export default {
 @import "~bootstrap/scss/bootstrap";
 
 li {
- width: calc(100% / 6);
     .movie-text {
         color: white;
         .lang img {
-            width: 5%;
+            width: 3%;
         }
-    }
-
-    .movie-text:hover {
-        display: block;
-        cursor: pointer;
+        .vote i{
+            color: yellow;
+        }
     }
 }
 </style>
