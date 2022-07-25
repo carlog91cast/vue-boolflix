@@ -30,8 +30,9 @@ export default {
 @import "~bootstrap/scss/bootstrap";
 
 main {
-    width: 60%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
+    background-color: #434343;
 }
 </style>

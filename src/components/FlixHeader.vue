@@ -1,6 +1,6 @@
 <template>
     <header class="bg-dark">
-        <nav class="navbar m-3">
+        <nav class="navbar p-3">
             <div class="text-danger fw-5">
                 <h1>BOOLFLIX</h1>
             </div>
