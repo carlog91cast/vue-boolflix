@@ -1,9 +1,9 @@
 <template>
-    <li class="list-group-item bg-dark mt-4">
+    <li class="list-group-item bg-dark mt-3">
         <div class="poster-film">
             <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
         </div>
-        <div class="movie-text d-none">
+        <div class="movie-text">
             <div class="title">
                 <h3>Titolo:{{ info.title }}</h3>
             </div>
@@ -47,13 +47,13 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~bootstrap/scss/bootstrap";
 
 li {
-
+ width: calc(100% / 6);
     .movie-text {
-
+        color: white;
         .lang img {
             width: 5%;
         }
