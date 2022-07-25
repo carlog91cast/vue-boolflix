@@ -1,7 +1,7 @@
 <template>
     <li class="bg-dark mt-3 p-2 m-2">
-        <div class="poster-film">
-            <img class="w-100" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
+        <div @mouseover="upHere = true" @mouseleave="upHere = false" class="poster-film">
+            <img v-show="upHere" class="w-100" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
         </div>
         <div class="movie-text fs-5 mt-3">
             <div class="title">
@@ -31,8 +31,10 @@ export default {
     name: 'MovieCard',
     data: function () {
         return {
-            langArray: ["it", "en", "ja", "es", "de", "pt"]
+            langArray: ["it", "en", "ja", "es", "de", "pt"],
+            upHere : false
         }
+        
     },
     props: ['info'],
 
@@ -56,11 +58,7 @@ li {
 
     .movie-text {
         color: white;
-        display: none;
 
-        .movie-text:hover {
-            display: block;
-        }
 
         .lang img {
             width: 30px;
@@ -70,6 +68,7 @@ li {
             color: yellow;
         }
     }
+   
 
 
 }

@@ -58,7 +58,6 @@ li {
 
     .series-text {
         color: white;
-        display: none;
 
         .lang img {
             width: 20px;
@@ -67,10 +66,6 @@ li {
         .vote i {
             color: yellow;
         }
-    }
-
-    .series-text:hover {
-        display: block;
     }
 }
 </style>
