@@ -3,12 +3,12 @@
         <div v-show="upHere" class="poster-film">
             <img class="w-100" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="">
         </div>
-        <div v-show="!upHere" class="movie-text fs-5 mt-3">
+        <div v-show="!upHere" class="movie-text mt-3">
             <div class="title">
-                <h4>Titolo:{{ info.title }}</h4>
+                <h5>Titolo : {{ info.title }}</h5>
             </div>
             <div class="origin-title">
-                <h4>Titolo originale:{{ info.original_title }}</h4>
+                <h5>Titolo originale : {{ info.original_title }}</h5>
             </div>
             <div class="lang mt-1 mb-1">
                 <img v-if="langArray.includes(info.original_language)"
@@ -58,6 +58,15 @@ li {
 
     .movie-text {
         color: white;
+        
+        h5{
+            font-size: 18px;
+        }
+        .overview{
+            h6{
+                font-size: 12px;
+            }
+        }
 
 
         .lang img {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FlixHeader @search="tvMoviesFunction" />
-    <FlixMain :movies = "movies" :series = "series" />
+    <FlixMain :movies="movies" :series="series" />
   </div>
 </template>
 
