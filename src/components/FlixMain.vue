@@ -39,7 +39,7 @@ export default {
 
 main {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
     background-color: #434343;
 }
